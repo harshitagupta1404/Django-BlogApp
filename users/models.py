@@ -9,7 +9,7 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self):
+    def save(self, **kwargs):
         super().save()
 
         img = Image.open(self.image.path)       #opens the image
@@ -17,3 +17,4 @@ class Profile(models.Model):
             output_size = (300,300)         # tuple of max size
             img.thumbnail(output_size)
             img.save(self.image.path)       # it will save this resized image at the same path (override it)
+            

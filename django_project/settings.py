@@ -27,6 +27,7 @@ SECRET_KEY = '8!u7oy8%=v0&ud2z(pgvy3#+6k9$p7j0(s_vfj5_+=4%=hm9_x'
 DEBUG = True
 
 ALLOWED_HOSTS = ['harshitadjangoapp.herokuapp.com']
+#ALLOWED_HOSTS = []
 
 
 # Application definition
