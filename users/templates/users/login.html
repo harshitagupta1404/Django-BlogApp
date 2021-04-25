@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load crispy_forms_tags %}
+{% load socialaccount %}
 
 {% block content %}
     <div class ="content-section">
@@ -10,15 +11,27 @@
                 {{form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class=" btn btn-outline-info" type="submit">Login</button>
-                <small class="text-muted ml-2">
+                <button class=" btn btn btn-sm btn-primary py-2 btn-block btn-login mb-2 " type="submit">Login</button>
+                <div class="text-muted ml-2">
                     <a href="{% url 'password_reset' %}">Forgot Password?</a>
-                </small>
+                </div>
             </div>
         </form>
+        <!--<div class ="text-muted">OR</div>-->
+        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-2">
+            <div class="border-bottom w-100 ml-5"></div>
+            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+            <div class="border-bottom w-100 mr-5"></div>
+        </div>
+        <!--<button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>-->
+        <div class="border-no pt-3">
+            <a class="btn-danger btn-sm py-2 btn-block text-center " href="{% provider_login_url 'google' %}">Continue with Google</a>
+            <!--<a class="btn-danger btn-lg mt-1 mb-1 " href="{% provider_login_url 'google' %}">Continue with Google</a>-->
+        </div>
+        <div class="border-no pt-4"></div>
         <div class="border-top pt-3">
             <small class ="text-muted">
-                Need an Account><a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
+                Need an Account?<a class="ml-2" href="{% url 'register' %}">Sign Up Now</a>
             </small>
         </div>
     </div>

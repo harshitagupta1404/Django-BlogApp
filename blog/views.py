@@ -37,7 +37,7 @@ posts=[
 
 class PostListView(ListView):
     model = Post
-    template_name = 'blog/home.html'
+    template_name = 'blog/home.html'    # <app>/<model>_<viewtype>.html
     context_object_name = 'posts'
     ordering = ['-date']
     paginate_by = 2
@@ -49,7 +49,9 @@ class UserPostListView(ListView):
     paginate_by = 2
 
     def get_queryset(self):
+        # this will fetch the username from URL
         user = get_object_or_404(User, username = self.kwargs.get('username'))
+        # it will compare fetched username from URL with author of the posts
         return Post.objects.filter(author=user).order_by('-date')
 
 
