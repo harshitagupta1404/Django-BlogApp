@@ -25,7 +25,7 @@ SECRET_KEY = '8!u7oy8%=v0&ud2z(pgvy3#+6k9$p7j0(s_vfj5_+=4%=hm9_x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+#DEBUG = os.environ.get('DEBUGVALUE')
 ALLOWED_HOSTS = ['harshitadjangoapp.herokuapp.com']
 #ALLOWED_HOSTS = []
 
