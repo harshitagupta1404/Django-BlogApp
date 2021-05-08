@@ -31,8 +31,8 @@
             {% endfor %}
 
             {% if page_obj.has_next %}
-                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
                 <a class="btn btn-outline-info mb-4" href="?page={{ page_obj.next_page_number }}">Next</a>
+                <a class="btn btn-outline-info mb-4" href="?page={{page_obj.paginator.num_pages}}">Last</a>
             {% endif %}
         {% endif %}
 {% endblock content %}        

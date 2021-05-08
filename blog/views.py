@@ -62,6 +62,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = ['title', 'content']
 
+    # without author we get integrity error
     def form_valid(self,form):
         form.instance.author = self.request.user
         return super().form_valid(form)
