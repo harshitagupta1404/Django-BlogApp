@@ -37,7 +37,9 @@ posts=[
 
 class PostListView(ListView):
     model = Post
+    # by default template name = modelName_list.html
     template_name = 'blog/home.html'    # <app>/<model>_<viewtype>.html
+    # by default template variable name = modelName_list
     context_object_name = 'posts'
     ordering = ['-date']
     paginate_by = 2
@@ -57,6 +59,8 @@ class UserPostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+    # by default in template we can access as object or modelName
+    # by default template name is modelName_detail.html
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
